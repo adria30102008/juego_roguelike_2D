@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://di6i7lqna5n5w"]
+
+[ext_resource type="Script" uid="uid://dgcgx04ajlxyp" path="res://scenes/personaje/personaje.gd" id="1_yq61j"]
+[ext_resource type="Texture2D" uid="uid://b542q8m28kt" path="res://sprites/personaje/Sprite-0003-sheet.png" id="2_bvjb6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04a37"]
+atlas = ExtResource("2_bvjb6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w81ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04a37")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1081271279]
+script = ExtResource("1_yq61j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1889667970]
+sprite_frames = SubResource("SpriteFrames_w81ou")
+animation = &"idle"
