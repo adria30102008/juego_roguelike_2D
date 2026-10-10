@@ -18,9 +18,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1081271279]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w81ou"]
+size = Vector2(20.75, 25)
+
+[node name="Personaje" type="CharacterBody2D" unique_id=1081271279 node_paths=PackedStringArray("animacion")]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_yq61j")
+animacion = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1889667970]
 sprite_frames = SubResource("SpriteFrames_w81ou")
 animation = &"idle"
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." unique_id=776811175]
+position = Vector2(-2.625, 3.5)
+shape = SubResource("RectangleShape2D_w81ou")
