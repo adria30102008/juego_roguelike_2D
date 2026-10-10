@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="juego_roguelike_2D"
-run/main_scene="uid://bgkkl8ahfxguw"
+run/main_scene="uid://bai32v53hkgwp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

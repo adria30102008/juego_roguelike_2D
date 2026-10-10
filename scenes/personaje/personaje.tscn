@@ -18,19 +18,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w81ou"]
-size = Vector2(20.75, 25)
-
-[node name="Personaje" type="CharacterBody2D" unique_id=1081271279 node_paths=PackedStringArray("animacion")]
+[node name="Personaje" type="CharacterBody2D" unique_id=1081271279 node_paths=PackedStringArray("animacion", "area_de_daño")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_yq61j")
 animacion = NodePath("AnimatedSprite2D")
+"area_de_daño" = NodePath("AreaDeDaño")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1889667970]
 sprite_frames = SubResource("SpriteFrames_w81ou")
 animation = &"idle"
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." unique_id=776811175]
+[node name="ColisionPersonaje" type="CollisionPolygon2D" parent="." unique_id=929715995]
 position = Vector2(-2.625, 3.5)
-shape = SubResource("RectangleShape2D_w81ou")
+polygon = PackedVector2Array(7.625, 12.5, -6.375, 12.5, -9.375, 9.5, -11.375, 4.5, -11.375, -0.5, -12.375, -4.5, -12.375, -7.5, -10.375, -10.5, -9.375, -11.5, -8.375, -11.5, -7.375, -9.5, -7.375, -3.5, -8.375, -2.5, -7.375, -0.5, -6.375, 3.5, -3.375, 4.5, -3.375, 3.5, -2.375, 2.5, -3.375, 1.5, -4.375, 0.5, -6.375, -2.5, -6.375, -8.5, -4.375, -8.5, -4.375, -6.5, -3.375, -6.5, -3.375, -4.5, -2.375, -4.5, -2.375, -10.5, -0.375, -12.5, 6.625, -12.5, 8.625, -10.5, 9.625, -8.5, 9.625, -5.5, 9.625, -4.5, 9.625, -1.5, 10.625, 1.5, 7.625, 7.5, 6.625, 11.5, 7.625, 11.5)
+
+[node name="AreaDeDaño" type="Area2D" parent="." unique_id=2072584344]
+
+[node name="ColisionPersonaje" type="CollisionPolygon2D" parent="AreaDeDaño" unique_id=1410834078]
+position = Vector2(-2.625, 3.5)
+polygon = PackedVector2Array(7.625, 12.5, -6.375, 12.5, -9.375, 9.5, -11.375, 4.5, -11.375, -0.5, -12.375, -4.5, -12.375, -7.5, -10.375, -10.5, -9.375, -11.5, -8.375, -11.5, -7.375, -9.5, -7.375, -3.5, -8.375, -2.5, -7.375, -0.5, -6.375, 3.5, -3.375, 4.5, -3.375, 3.5, -2.375, 2.5, -3.375, 1.5, -4.375, 0.5, -6.375, -2.5, -6.375, -8.5, -4.375, -8.5, -4.375, -6.5, -3.375, -6.5, -3.375, -4.5, -2.375, -4.5, -2.375, -10.5, -0.375, -12.5, 6.625, -12.5, 8.625, -10.5, 9.625, -8.5, 9.625, -5.5, 9.625, -4.5, 9.625, -1.5, 10.625, 1.5, 7.625, 7.5, 6.625, 11.5, 7.625, 11.5)

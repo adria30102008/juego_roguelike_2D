@@ -2,16 +2,19 @@
 extends CharacterBody2D
 
 @export var animacion: AnimatedSprite2D
+@export var area_de_daño: Area2D
 
-var en_zona := false
-var _velocidad: float = 100
-var _velocidad_de_salto: float = -200
-var _segundo_salto: float = -100
-var velocidad_zona := 25.0
+var _velocidad: float = 125
+var _velocidad_de_salto: float = -250
+
+
+func ready():
+	area_de_daño.area_entered.connect(_on_area_de_daño_body_entered)
+
+
 
 func _physics_process(delta):
 	
-	var vel = velocidad_zona if en_zona else _velocidad
 	
 	#Gravedad
 	velocity += get_gravity() * delta
@@ -19,15 +22,15 @@ func _physics_process(delta):
 	#Movimiento
 	if Input.is_action_just_pressed("saltar") and is_on_floor():
 		velocity.y = _velocidad_de_salto
-	elif Input.is_action_just_pressed("saltar") and not is_on_floor():
-		velocity.y = _segundo_salto
 		
 	if Input.is_action_pressed("derecha"):
-		velocity.x = vel
+		velocity.x = _velocidad
 		animacion.flip_h = false
 	elif Input.is_action_pressed("izquierda"):
-		velocity.x = -vel
+		velocity.x = -_velocidad
 		animacion.flip_h = true
 	else:
 		velocity.x = 0
 	move_and_slide()
+	
+	func _on_area_de_daño_body_entered(area)
