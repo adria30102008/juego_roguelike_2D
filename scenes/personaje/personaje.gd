@@ -3,15 +3,15 @@ extends CharacterBody2D
 
 @export var animacion: AnimatedSprite2D
 
-var en_zona := false 
+var en_zona := false
 var _velocidad: float = 100
 var _velocidad_de_salto: float = -200
 var _segundo_salto: float = -100
-var velocidad_zona := 900
+var velocidad_zona := 25.0
 
 func _physics_process(delta):
 	
-	
+	var vel = velocidad_zona if en_zona else _velocidad
 	
 	#Gravedad
 	velocity += get_gravity() * delta
@@ -23,14 +23,11 @@ func _physics_process(delta):
 		velocity.y = _segundo_salto
 		
 	if Input.is_action_pressed("derecha"):
-		velocity.x = _velocidad
+		velocity.x = vel
 		animacion.flip_h = false
 	elif Input.is_action_pressed("izquierda"):
-		velocity.x = -_velocidad
+		velocity.x = -vel
 		animacion.flip_h = true
 	else:
 		velocity.x = 0
 	move_and_slide()
-	
-	#personaje agua
-	
