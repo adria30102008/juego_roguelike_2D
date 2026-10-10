@@ -1,19 +1,15 @@
 [gd_scene format=3 uid="uid://bai32v53hkgwp"]
 
 [ext_resource type="PackedScene" uid="uid://di6i7lqna5n5w" path="res://scenes/personaje/personaje.tscn" id="1_ql16b"]
-[ext_resource type="PackedScene" uid="uid://db8gx3opdpbvg" path="res://scenes/escenario/partes_de_escenario/suelo.tscn" id="2_km27n"]
-[ext_resource type="PackedScene" uid="uid://cm64nutmf4ksb" path="res://scenes/escenario/trampas_pinchos/node_2d.tscn" id="3_km27n"]
+[ext_resource type="PackedScene" uid="uid://db8gx3opdpbvg" path="res://scenes/escenario/mapa/mapa.tscn" id="2_km27n"]
 
 [node name="EscenarioPrincipal" type="Node2D" unique_id=856594661]
 
 [node name="Personaje" parent="." unique_id=1081271279 instance=ExtResource("1_ql16b")]
-position = Vector2(-100, 25)
+position = Vector2(-115, -119)
 
-[node name="Suelo" parent="." unique_id=1343553732 instance=ExtResource("2_km27n")]
-position = Vector2(-5, 104)
+[node name="Mapa" parent="." unique_id=1343553732 instance=ExtResource("2_km27n")]
+position = Vector2(5, 46)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1711801327]
 zoom = Vector2(1.955, 1.955)
-
-[node name="Node2D" parent="." unique_id=169148558 instance=ExtResource("3_km27n")]
-position = Vector2(124, 33)

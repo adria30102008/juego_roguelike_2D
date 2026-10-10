@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://dgcgx04ajlxyp" path="res://scenes/personaje/personaje.gd" id="1_yq61j"]
 [ext_resource type="Texture2D" uid="uid://b542q8m28kt" path="res://sprites/personaje/Sprite-0003-sheet.png" id="2_bvjb6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_04a37"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvjb6"]
+atlas = ExtResource("2_bvjb6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq61j"]
 atlas = ExtResource("2_bvjb6")
 region = Rect2(0, 0, 32, 32)
 
@@ -11,10 +15,18 @@ region = Rect2(0, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_04a37")
+"texture": SubResource("AtlasTexture_bvjb6")
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq61j")
+}],
+"loop": 1,
+"name": &"movement",
 "speed": 5.0
 }]
 

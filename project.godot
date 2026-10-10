@@ -43,6 +43,7 @@ saltar={
 2d_physics/layer_1="Suelo"
 2d_physics/layer_2="Agua"
 2d_physics/layer_3="Personaje"
+2d_physics/layer_4="Daño"
 
 [physics]
 

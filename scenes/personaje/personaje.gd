@@ -26,11 +26,15 @@ func _physics_process(delta):
 	if Input.is_action_pressed("derecha"):
 		velocity.x = _velocidad
 		animacion.flip_h = false
+		animacion.play("movement")
 	elif Input.is_action_pressed("izquierda"):
 		velocity.x = -_velocidad
 		animacion.flip_h = true
+		animacion.play("movement")
 	else:
 		velocity.x = 0
+		animacion.play("idle")
 	move_and_slide()
 	
-	func _on_area_de_daño_body_entered(area)
+func _on_area_de_daño_body_entered(area):
+	pass
